@@ -51,3 +51,4 @@ String operations
     - lower
     - replace
     - slice
+user inputs
