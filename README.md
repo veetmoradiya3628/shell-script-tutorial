@@ -52,3 +52,4 @@ String operations
     - replace
     - slice
 user inputs
+let command for expressions
