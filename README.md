@@ -40,3 +40,4 @@ comment
 
 Variables
 Read only variables (constant variables)
+Arrays
