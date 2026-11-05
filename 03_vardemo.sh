@@ -1,12 +1,12 @@
 #!/bin/bash
 
 #defining variables
-name="Veet"
+readonly name="Veet"
 age=25
 
 echo "My name is $name and age is $age"
 
-name="Paul"
+name="Paul" # if name is readonly, this will throw an error
 echo "New name is ${name}"
 
 host=$(hostname)
