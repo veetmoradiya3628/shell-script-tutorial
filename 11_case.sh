@@ -8,7 +8,10 @@ echo "c = To list all the files in current directory"
 read choice
 
 case $choice in
-    a) date;;
+    a)  
+        date
+        hostname
+        ;;
     b) pwd;;
     c) ls;;
     *) echo "Not a valid option"
