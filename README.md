@@ -41,3 +41,6 @@ comment
 Variables
 Read only variables (constant variables)
 Arrays
+    - range
+    - update
+    - read /access
