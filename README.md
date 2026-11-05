@@ -45,3 +45,9 @@ Arrays
     - update
     - read /access
     - key value
+String operations
+    - length
+    - upper
+    - lower
+    - replace
+    - slice
