@@ -19,3 +19,23 @@ Q. what is shell scripting ?
 - All the commands execute sequentially
 - Some task like file manipulation, program execution, user interaction, automation of task etc can be done
 
+Q. what is shebang ?
+- `#!/bin/bash` - tell OS to use which type of interpreter
+
+Q. How to run script ?
+- make sure script has `rwx` permission
+    1. bash script.sh
+    2. ./script.sh
+    3. /path/script.sh
+
+Q. Comments ?
+- using `#` or 
+```
+<<comment
+...
+multiline comment here
+...
+comment
+```
+
+Variables
