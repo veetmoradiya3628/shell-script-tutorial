@@ -1,72 +1,67 @@
-# shell-script-tutorial
+# Shell Script Tutorial
 
-Q. What is shell script ?
-A shell provide an environment to a user to execute commands and interact with kernal.
+A collection of beginner-friendly Bash examples, from basic scripts through loops, functions, and small interactive programs.
 
-Q. Types of shell
-- bash
-- sh
-- ksh
-- tsh
-- fish
-- zsh
+## Requirements
 
-Q. what is my shell type ?
-- `echo $0`
+- Bash (the examples use Bash-specific features such as indexed and associative arrays).
+- A terminal. On Windows, use WSL or another Bash environment.
 
-Q. what is shell scripting ?
-- shell script consist of set of commands to perform a task.
-- All the commands execute sequentially
-- Some task like file manipulation, program execution, user interaction, automation of task etc can be done
+## Running a script
 
-Q. what is shebang ?
-- `#!/bin/bash` - tell OS to use which type of interpreter
+From the repository directory, run a lesson with Bash:
 
-Q. How to run script ?
-- make sure script has `rwx` permission
-    1. bash script.sh
-    2. ./script.sh
-    3. /path/script.sh
-
-Q. Comments ?
-- using `#` or 
-```
-<<comment
-...
-multiline comment here
-...
-comment
+```bash
+bash 01_basic-script.sh
 ```
 
-Variables
-Read only variables (constant variables)
-Arrays
-    - range
-    - update
-    - read /access
-    - key value
-String operations
-    - length
-    - upper
-    - lower
-    - replace
-    - slice
-user inputs
-let command for expressions
-conditional statement
-for loop
-while loop
-functions with args
-shell script run args
-Control iteration of the flow
-    break
-    continue
-    sleep
-    exit
-    use of $? to see the status of previous command
-basename
-dirname
-realpath
-bash variables
-    - RANDOM
-    - UID
+Alternatively, make a script executable once and run it directly:
+
+```bash
+chmod +x 01_basic-script.sh
+./01_basic-script.sh
+```
+
+Run the lessons from the repository directory when they use relative paths. For example, `15_for_with_file.sh` reads server names from `test/servers.txt`.
+
+## Lessons
+
+| Script | Topic |
+| --- | --- |
+| `01_basic-script.sh` | A basic script and output |
+| `02_comments.sh` | Comments |
+| `03_vardemo.sh` | Variables |
+| `04_arrays.sh` | Indexed arrays, reading values, and slicing |
+| `05_key_value.sh` | Associative arrays (key-value pairs) |
+| `06_string_ops.sh` | String length, case conversion, replacement, and slicing |
+| `07_user_input.sh` | Reading user input |
+| `08_airth_ops.sh` | Arithmetic operations |
+| `09_if_else.sh` | `if` / `else` conditionals |
+| `10_elif.sh` | Multiple conditional branches with `elif` |
+| `11_case.sh` | `case` statements |
+| `12_logical_ops.sh` | Logical operators in conditions |
+| `13_ternary_ops.sh` | Conditional expressions |
+| `14_for_loop.sh` | Iterating over lists and ranges |
+| `15_for_with_file.sh` | Reading and iterating over a file |
+| `16_for_with_array.sh` | Iterating over an array |
+| `17_while_loop.sh` | `while` loops |
+| `18_until_loop.sh` | `until` loops |
+| `19_infinite_loop.sh` | An infinite loop |
+| `20_infinite_terminal.sh` | A continuously running terminal example; stop it with `Ctrl+C` |
+| `21_functions.sh` | Defining and calling functions |
+| `22_function_with_args.sh` | Passing arguments to functions |
+| `23_args.sh` | Reading script arguments |
+| `24_break.sh` | Exiting a loop with `break` |
+| `25_continue.sh` | Skipping an iteration with `continue` |
+| `26_sleep.sh` | Pausing execution with `sleep` |
+| `27_connectivity_check.sh` | Checking connectivity |
+| `28_dice_game.sh` | A simple dice game |
+
+## Other topics
+
+- A shebang such as `#!/bin/bash` selects the interpreter used when running a script directly.
+- Common shell types include Bash, sh, ksh, tcsh, fish, and zsh. Check the current shell with `echo "$0"`.
+- Shell scripts execute commands in sequence and can automate tasks such as file manipulation, program execution, and user interaction.
+- Comments start with `#`. Bash does not have a dedicated multiline-comment syntax; use `#` on each comment line.
+- Redirection: `>` writes output to a file (overwriting it), while `>>` appends output.
+- Other examples cover `RANDOM`, `UID`, `basename`, `dirname`, `realpath`, `exit`, and the previous command's status (`$?`).
