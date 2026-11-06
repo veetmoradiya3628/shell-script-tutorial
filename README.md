@@ -61,3 +61,6 @@ shell script run args
 Control iteration of the flow
     break
     continue
+    sleep
+    exit
+    use of $? to see the status of previous command
