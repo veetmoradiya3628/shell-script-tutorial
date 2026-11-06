@@ -1,30 +1,39 @@
 # Shell Script Tutorial
 
-A collection of beginner-friendly Bash examples, from basic scripts through loops, functions, and small interactive programs.
+This repository is a hands-on introduction to Bash scripting. The numbered scripts build from simple commands to variables, control flow, functions, and small automation examples.
 
 ## Requirements
 
-- Bash (the examples use Bash-specific features such as indexed and associative arrays).
-- A terminal. On Windows, use WSL or another Bash environment.
+- Bash 4 or later. These lessons use Bash features and are not intended to run with `sh`.
+- A terminal with Bash. On Windows, use WSL or another Bash environment.
 
-## Running a script
-
-From the repository directory, run a lesson with Bash:
+Check your Bash version with:
 
 ```bash
+bash --version
+```
+
+## Getting started
+
+Open a terminal, change to the repository directory, and run a lesson with Bash:
+
+```bash
+cd /path/to/shell-script-tutorial
 bash 01_basic-script.sh
 ```
 
-Alternatively, make a script executable once and run it directly:
+Run scripts from the repository directory when they use relative paths. For example, `15_for_with_file.sh` reads `test/servers.txt`.
+
+To run a script directly instead, give it execute permission once:
 
 ```bash
 chmod +x 01_basic-script.sh
 ./01_basic-script.sh
 ```
 
-Run the lessons from the repository directory when they use relative paths. For example, `15_for_with_file.sh` reads server names from `test/servers.txt`.
+## Learning path
 
-## Lessons
+Work through the scripts in order. Some scripts ask for input; follow the prompt in the terminal.
 
 | Script | Topic |
 | --- | --- |
@@ -42,11 +51,11 @@ Run the lessons from the repository directory when they use relative paths. For 
 | `12_logical_ops.sh` | Logical operators in conditions |
 | `13_ternary_ops.sh` | Conditional expressions |
 | `14_for_loop.sh` | Iterating over lists and ranges |
-| `15_for_with_file.sh` | Reading and iterating over a file |
+| `15_for_with_file.sh` | Iterating over server names in `test/servers.txt` |
 | `16_for_with_array.sh` | Iterating over an array |
 | `17_while_loop.sh` | `while` loops |
 | `18_until_loop.sh` | `until` loops |
-| `19_infinite_loop.sh` | An infinite loop |
+| `19_infinite_loop.sh` | An infinite loop; stop it with `Ctrl+C` |
 | `20_infinite_terminal.sh` | A continuously running terminal example; stop it with `Ctrl+C` |
 | `21_functions.sh` | Defining and calling functions |
 | `22_function_with_args.sh` | Passing arguments to functions |
@@ -54,17 +63,48 @@ Run the lessons from the repository directory when they use relative paths. For 
 | `24_break.sh` | Exiting a loop with `break` |
 | `25_continue.sh` | Skipping an iteration with `continue` |
 | `26_sleep.sh` | Pausing execution with `sleep` |
-| `27_connectivity_check.sh` | Checking connectivity |
-| `28_dice_game.sh` | A simple dice game |
+| `27_connectivity_check.sh` | Checking connectivity to a site entered at the prompt |
+| `28_dice_game.sh` | Generating a random dice value |
+| `29_big_script_test.sh` | Repeating work and redirecting output |
+| `30_create_file.sh` | Writing the script name to a file |
 
-## Other topics
+## Running scripts in the background
 
-- A shebang such as `#!/bin/bash` selects the interpreter used when running a script directly.
-- Common shell types include Bash, sh, ksh, tcsh, fish, and zsh. Check the current shell with `echo "$0"`.
-- Shell scripts execute commands in sequence and can automate tasks such as file manipulation, program execution, and user interaction.
-- Comments start with `#`. Bash does not have a dedicated multiline-comment syntax; use `#` on each comment line.
-- Redirection: `>` writes output to a file (overwriting it), while `>>` appends output.
-- Other examples cover `RANDOM`, `UID`, `basename`, `dirname`, `realpath`, `exit`, and the previous command's status (`$?`).
+`29_big_script_test.sh` runs for about 40 seconds and overwrites `output.txt` on each iteration. To try the included `nohup` example from the repository directory:
 
+```bash
+nohup bash 29_big_script_test.sh > output.log 2>&1 &
+```
 
-nohup to run script in backgroud
+This runs the script in the background and writes its output to `output.log`. The script's own `output.txt` is still overwritten each iteration. Use background jobs carefully and stop one when it is no longer needed.
+
+## Scheduling scripts
+
+On systems that provide `cron`, edit your personal crontab with:
+
+```bash
+crontab -e
+```
+
+Add a schedule using this format:
+
+```text
+minute hour day-of-month month day-of-week command
+```
+
+For example, to run a script every day at 9:00 AM, use its full path:
+
+```cron
+0 9 * * * /bin/bash /absolute/path/to/script.sh
+```
+
+List scheduled jobs with `crontab -l`. Cron availability and behavior depend on the operating system; Windows users can use Task Scheduler instead. The `at` command is another option on systems where it is installed.
+
+## Bash basics
+
+- A shebang such as `#!/bin/bash` identifies the interpreter for direct execution.
+- Check the current shell with `echo "$0"`.
+- Shell scripts run commands in sequence and can automate tasks such as file manipulation, program execution, and user interaction.
+- Use `#` for comments. Bash has no dedicated multiline-comment syntax; prefix each comment line with `#`.
+- `>` redirects output to a file, replacing its contents; `>>` appends output.
+- `$?` contains the exit status of the most recently completed command. `RANDOM` and `UID` are examples of Bash variables; `basename`, `dirname`, and `realpath` are common path utilities.
