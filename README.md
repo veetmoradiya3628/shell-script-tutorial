@@ -56,3 +56,4 @@ let command for expressions
 conditional statement
 for loop
 while loop
+functions
