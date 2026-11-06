@@ -64,3 +64,6 @@ Control iteration of the flow
     sleep
     exit
     use of $? to see the status of previous command
+basename
+dirname
+realpath
