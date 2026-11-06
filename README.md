@@ -65,3 +65,6 @@ Run the lessons from the repository directory when they use relative paths. For 
 - Comments start with `#`. Bash does not have a dedicated multiline-comment syntax; use `#` on each comment line.
 - Redirection: `>` writes output to a file (overwriting it), while `>>` appends output.
 - Other examples cover `RANDOM`, `UID`, `basename`, `dirname`, `realpath`, `exit`, and the previous command's status (`$?`).
+
+
+nohup to run script in backgroud
