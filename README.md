@@ -54,3 +54,5 @@ String operations
 user inputs
 let command for expressions
 conditional statement
+for loop
+while loop
