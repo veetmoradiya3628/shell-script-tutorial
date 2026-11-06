@@ -67,3 +67,6 @@ Control iteration of the flow
 basename
 dirname
 realpath
+bash variables
+    - RANDOM
+    - UID
